@@ -21,6 +21,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'name' => 'Rabiul Hassan',
     ]);
 });
 
@@ -32,4 +33,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+});
+
+
+Route::get('/users', function () {
+    return Inertia::render('users');
+});
+
+Route::get('/settings', function () {
+    return Inertia::render('settings');
 });
